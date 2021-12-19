@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,16 +42,8 @@ public class OrdenService {
 		return ordenRepository.findByStatusAndSalesmanId(status, id);
 	}	
 	
-	public List<Orden> findByRegisterdayAndSalesmanId(String date, int id){
-		SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-		Date dataFormateada = null;
-		try {
-			dataFormateada = formato.parse(date);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return ordenRepository.findByRegisterdayAndSalesmanId(dataFormateada, id);
+	public List<Orden> findByRegisterdayAndSalesmanId(String date, int id){		
+		return ordenRepository.findByRegisterdayAndSalesmanId(date, id);
 	}
 	
 

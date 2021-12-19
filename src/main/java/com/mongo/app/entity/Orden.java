@@ -1,6 +1,6 @@
 package com.mongo.app.entity;
 
-import java.util.Date;
+//import java.util.Date;
 import java.util.Map;
 
 import org.springframework.data.annotation.Id;
@@ -11,7 +11,7 @@ public class Orden {
 	
 	
 	
-	public Orden(Integer id, Date registerDay, String status, Usuario salesMan, Map<String, Producto> products,
+	public Orden(Integer id, String registerDay, String status, Usuario salesMan, Map<String, Producto> products,
 			Map<String, Integer> quantities) {
 		
 		this.id = id;
@@ -35,7 +35,7 @@ public class Orden {
 	@Id
 	private Integer id;
 
-	private Date registerDay;
+	private String registerDay;
 
 	private String status;
 
@@ -81,11 +81,11 @@ public class Orden {
 		this.id = id;
 	}
 
-	public Date getRegisterDay() {
+	public String getRegisterDay() {
 		return registerDay;
 	}
 
-	public void setRegisterDay(Date registerDay) {
+	public void setRegisterDay(String registerDay) {
 		this.registerDay = registerDay;
 	}
 

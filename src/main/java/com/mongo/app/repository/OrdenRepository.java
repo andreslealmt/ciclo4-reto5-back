@@ -23,7 +23,7 @@ public interface OrdenRepository extends MongoRepository<Orden, Integer>{
     List<Orden> findByStatusAndSalesmanId(String status, int id);
 	
 	@Query(value = "{ 'registerDay' : ?0, 'salesMan.id' : ?1 }")
-	List<Orden> findByRegisterdayAndSalesmanId(Date date, int id);
+	List<Orden> findByRegisterdayAndSalesmanId(String date, int id);
 	
 //	@Query("{'registerDay': ?0}")
 //	List<Orden> findByRegisterday(Date date);

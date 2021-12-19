@@ -69,8 +69,10 @@ public class OrdenController {
 	}
 	
 	@GetMapping("/date/{date}/{id}")
-	public List<Orden> findByRegisterdayAndSalesmanId(@PathVariable String date, @PathVariable int id){		
-		return ordenService.findByRegisterdayAndSalesmanId(date, id);
+	public List<Orden> findByRegisterdayAndSalesmanId(@PathVariable String date, @PathVariable int id){
+		String fecha = date+"T05:00:00.000+00:00"; 
+		System.out.println(fecha);
+		return ordenService.findByRegisterdayAndSalesmanId(fecha, id);
 	}
 	
 	
